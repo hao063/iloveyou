@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>I LOVE YOU</title>
+    <title>Hào Yêu Bạn :3</title>
+    
+
+    <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh; 
+            }
+
+    </style>
+
+    <div class="main-class"> </div>
+
+
     <script>
        onload = function () {
             var d = document;
-            // フェードイン
+            var parentDiv = d.querySelector(".main-class");
+
+
             function feedin (feed, speed) {
                 var filter = 0;
                 feed.style.opacity = 0;
@@ -19,7 +36,6 @@
                     } 
                 },speed);
             }
-            // I LOVE YOU
             var str = [
                 [36,37,38,72,107,142,176,177,178],
                 [41,76,111,146,181,182,183],
@@ -30,10 +46,10 @@
                 [202,167,132,97,62,63,64,99,134,169,204],
                 [203,66,101,136,171,206,207,208,173,138,103,68]
             ];
-            // ブロック表示
             for (i=0;i<245;i++) {
                 var box = d.createElement('div');
-                with (d.body.appendChild(box).style) {
+                box.className = "child-class";
+                with (parentDiv.appendChild(box).style) {
                     if (i % 35 == 0) { clear = 'both'; }
                     border = 'solid #222 1px';
                     width = '20px';
@@ -42,8 +58,7 @@
                     float = 'left';
                 }   
             }
-            // メッセージ表示
-            var mess = d.getElementsByTagName('div');
+            var mess = d.getElementsByClassName('child-class');
             var i = 0, j = 0;
             setInterval(function () {
                 feedin(mess[str[i][j]], 25);
